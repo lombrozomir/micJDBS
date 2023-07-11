@@ -1,17 +1,17 @@
 public class ConnectDB {
-    private static final String url = "jdbc:postgresql://localhost:5432/test_DB";
-    private static final String username = "postgres";
-    private static final String password = "07032000";
+    private static final String URL = "jdbc:postgresql://localhost:5432/test_DB";
+    private static final String USERNAME = "postgres";
+    private static final String PASS = "07032000";
 
     public static String getUrl() {
-        return url;
+        return URL;
     }
 
     public static String getUsername() {
-        return username;
+        return USERNAME;
     }
 
     public static String getPassword() {
-        return password;
+        return PASS;
     }
 }

@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ffaf7f9-5e68-414d-b7cc-897e730d4da3" name="Changes" comment="yt">
-      <change afterPath="$PROJECT_DIR$/src/ConnectDB.java" afterDir="false" />
+    <list default="true" id="5ffaf7f9-5e68-414d-b7cc-897e730d4da3" name="Changes" comment="develop [DEV] - Сделал ООП вместо процедурного программирования.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyJDBC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +76,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -105,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689087705491</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="develop [DEV] - Сделал ООП вместо процедурного программирования.">
+      <created>1689092982362</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689092982362</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +126,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="yt" />
-    <option name="LAST_COMMIT_MESSAGE" value="yt" />
+    <MESSAGE value="develop [DEV] - Сделал ООП вместо процедурного программирования." />
+    <option name="LAST_COMMIT_MESSAGE" value="develop [DEV] - Сделал ООП вместо процедурного программирования." />
   </component>
 </project>
