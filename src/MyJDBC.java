@@ -1,7 +1,15 @@
 import java.sql.*;
 
-public class MyJDBC {
-    public static void create(String name, String url, String username, String password) {
+public class MyJDBC extends ConnectDB{
+
+    public MyJDBC() {
+
+    }
+
+    public static void create(String name) {
+        String url = ConnectDB.getUrl();
+        String username = ConnectDB.getUsername();
+        String password = ConnectDB.getPassword();
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             String sql = "INSERT INTO users (name) VALUES(?)";
             PreparedStatement prepareStatement = connection.prepareStatement(sql);
@@ -20,7 +28,10 @@ public class MyJDBC {
         }
     }
 
-    public static void read(String url, String username, String password) {
+    public static void read() {
+        String url = ConnectDB.getUrl();
+        String username = ConnectDB.getUsername();
+        String password = ConnectDB.getPassword();
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
 
             String sql = "SELECT * FROM users";
@@ -38,17 +49,15 @@ public class MyJDBC {
             statement.close();
 
         } catch (SQLException e) {
-            System.out.println("Ошибка при добавлении записи в таблицу.");
+            System.out.println("Ошибка при чтении записи из таблицы.");
             e.printStackTrace();
         }
     }
 
-    public static void delete(String url, String username, String password){
+    public static void delete(String url, String username, String password) {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
 
             String sql = "DELETE FROM users WHERE name = 'John'";
-
-
 
 
         } catch (SQLException e) {
