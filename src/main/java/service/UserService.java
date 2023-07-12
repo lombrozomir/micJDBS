@@ -5,6 +5,8 @@ import model.User;
 public interface UserService {
     void create(User user);
     User read(int id);
-    void update();
-    void delete();
+    void update(User user);
+    void delete(int id);
+    void createTable();
+    void deleteTable();
 }

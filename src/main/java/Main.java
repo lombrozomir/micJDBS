@@ -1,10 +1,15 @@
+import model.User;
+import service.TrashServiceImpl;
 import service.UserServiceImpl;
 public class Main {
     public static void main(String[] args) {
-        UserServiceImpl us = new UserServiceImpl();
-        //User us1 = new User(34,"fdfdf",32);
-        //us.create(us1);
-        System.out.println(us.read(4).toString());
+
+        //UserServiceImpl userService = new UserServiceImpl();
+        //User user = new User(4, "rtrgrg", 2226);
+        //userService.createTable();
+        TrashServiceImpl trashService = new TrashServiceImpl();
+        trashService.deleteTable();
+
     }
 
 

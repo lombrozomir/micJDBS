@@ -16,12 +16,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void update() {
-
+    public void update(User user) {
+        dao.update(user);
     }
 
     @Override
-    public void delete() {
+    public void delete(int id) {
+        dao.delete(id);
+    }
 
+    @Override
+    public void createTable() {
+        dao.createTable();
+    }
+
+    @Override
+    public void deleteTable() {
+        dao.deleteTable();
     }
 }

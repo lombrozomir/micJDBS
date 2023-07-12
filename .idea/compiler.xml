@@ -9,8 +9,5 @@
         <module name="micJDBS" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="micJDBS" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>

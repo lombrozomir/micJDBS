@@ -1,4 +1,4 @@
-package main.java.config;
+package config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class ConnectDB {
     private static final String DRIVER = "org.postgresql.Driver";
-    private static final String URL = "jdbc:postgresql://localhost:5432/test_DB";
+    private static final String URL = "jdbc:postgresql://localhost:5432/test_BD";
     private static final String USERNAME = "postgres";
-    private static final String PASS = "07032000";
+    private static final String PASS = "22051999";
 
     public static Connection connectionToDB() {
         try {

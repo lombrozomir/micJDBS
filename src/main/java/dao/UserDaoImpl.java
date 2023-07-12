@@ -1,9 +1,11 @@
 package dao;
 
-import main.java.config.ConnectDB;
+import config.ConnectDB;
+import model.Trash;
 import model.User;
 
 import java.sql.*;
+import java.util.Collection;
 
 // работа с базой данных
 public class UserDaoImpl implements UserDao {
@@ -12,13 +14,16 @@ public class UserDaoImpl implements UserDao {
     public void create(User user) {
         try {
             Connection connection = ConnectDB.connectionToDB();
-            String sql = String.format("INSERT INTO users (id, name, age) VALUES(%d, '%s', %d)",
-                    user.getId(), user.getName(), user.getAge());
+
+            String sql = "INSERT INTO users (id, name, age) VALUES (?, ?, ?)";
 
             assert connection != null;
 
-            Statement statement = connection.createStatement();
-            statement.execute(sql);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, user.getId());
+            preparedStatement.setString(2, user.getName());
+            preparedStatement.setInt(3, user.getAge());
+            preparedStatement.executeUpdate();
 
             connection.close();
 
@@ -34,20 +39,23 @@ public class UserDaoImpl implements UserDao {
         try {
             Connection connection = ConnectDB.connectionToDB();
 
-            String sql = String.format("SELECT * FROM users WHERE id = %d", id);
+            String sql = "SELECT * FROM users WHERE id = ?";
+            String sql1 = "SELECT * FROM trash WHERE id = ?";
             assert connection != null;
 
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
 
-            if (resultSet.next()){
+
+            if (resultSet.next()) {
                 int UserId = resultSet.getInt("id");
                 String UserName = resultSet.getString("name");
                 int UserAge = resultSet.getInt("age");
 
                 connection.close();
-                return new User(UserId, UserName, UserAge);
+                //return new User(UserId, UserName, UserAge,);
             }
             return null;
 
@@ -59,12 +67,79 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void update() {
+    public void update(User user) {
+        try {
+            Connection connection = ConnectDB.connectionToDB();
 
+            String sql = "UPDATE users SET age = ?, name = ? WHERE id = ?";
+
+            assert connection != null;
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, user.getAge());
+            preparedStatement.setString(2, user.getName());
+            preparedStatement.setInt(3, user.getId());
+            preparedStatement.executeUpdate();
+
+            connection.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public void delete() {
+    public void delete(int id) {
+        try {
+            Connection connection = ConnectDB.connectionToDB();
 
+            String sql = "DELETE FROM users WHERE id = ?";
+
+            assert connection != null;
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void createTable() {
+
+        try {
+            Connection connection = ConnectDB.connectionToDB();
+
+            assert connection != null;
+
+            String sql = "CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(50), age int)";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.executeUpdate();
+
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteTable() {
+        try {
+            Connection connection = ConnectDB.connectionToDB();
+            assert connection != null;
+
+            String sql = "DROP TABLE users";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.executeUpdate();
+
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

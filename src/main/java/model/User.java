@@ -4,13 +4,23 @@ public class User {
     private int id;
     private String name;
     private int age;
+    private Trash trash;
     public User() {
 
     }
-    public User(int id, String name, int age) {
+    public User(int id, String name, int age, Trash trash) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.trash = trash;
+    }
+
+    public Trash getTrash() {
+        return trash;
+    }
+
+    public void setTrash(Trash trash) {
+        this.trash = trash;
     }
 
     public int getId() {
