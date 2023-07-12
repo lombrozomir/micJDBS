@@ -2,7 +2,7 @@ package model;
 
 public class Trash {
     private int id;
-    private User user;
+    private int UserID;
     private int price;
     private int amountBuy;
 
@@ -10,9 +10,17 @@ public class Trash {
 
     }
 
-    public Trash(int id, User user, int price, int amountBuy) {
+    public int getUserID() {
+        return UserID;
+    }
+
+    public void setUserID(int userID) {
+        UserID = userID;
+    }
+
+    public Trash(int id, int userID, int price, int amountBuy) {
         this.id = id;
-        this.user = user;
+        UserID = userID;
         this.price = price;
         this.amountBuy = amountBuy;
     }
@@ -25,13 +33,6 @@ public class Trash {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public int getPrice() {
         return price;

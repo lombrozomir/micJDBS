@@ -11,11 +11,12 @@ import java.util.Collection;
 public class UserDaoImpl implements UserDao {
 
     @Override
-    public void create(User user) {
+    public void create(User user, Trash trash) {
         try {
             Connection connection = ConnectDB.connectionToDB();
 
             String sql = "INSERT INTO users (id, name, age) VALUES (?, ?, ?)";
+
 
             assert connection != null;
 
@@ -25,6 +26,14 @@ public class UserDaoImpl implements UserDao {
             preparedStatement.setInt(3, user.getAge());
             preparedStatement.executeUpdate();
 
+            String sql1 = "INSERT INTO trash (id, userID, price, amountBuy) VALUES (?, ?, ?, ?)";
+
+            PreparedStatement preparedStatement1 = connection.prepareStatement(sql1);
+            preparedStatement1.setInt(1, trash.getId());
+            preparedStatement1.setInt(2, user.getId());
+            preparedStatement1.setInt(3,trash.getPrice());
+            preparedStatement1.setInt(4,trash.getAmountBuy());
+            preparedStatement1.executeUpdate();
             connection.close();
 
         } catch (Exception e) {
@@ -47,7 +56,7 @@ public class UserDaoImpl implements UserDao {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-
+            PreparedStatement preparedStatement1 = connection.prepareStatement(sql1);
 
             if (resultSet.next()) {
                 int UserId = resultSet.getInt("id");
@@ -55,7 +64,7 @@ public class UserDaoImpl implements UserDao {
                 int UserAge = resultSet.getInt("age");
 
                 connection.close();
-                //return new User(UserId, UserName, UserAge,);
+                //return new User(UserId, UserName, UserAge, );
             }
             return null;
 

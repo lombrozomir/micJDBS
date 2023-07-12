@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ffaf7f9-5e68-414d-b7cc-897e730d4da3" name="Changes" comment="develop [DEV] - Изменил название переменных.">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TrashDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TrashDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Trash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/TrashService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/TrashServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_31_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_6_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="5ffaf7f9-5e68-414d-b7cc-897e730d4da3" name="Changes" comment="develop [DEV] - Добавил методы создания и удаления таблицы user, создал таблицу Trash и сделал crud таблицы Trash.">
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micJDBS.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/ConnectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/ConnectDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TrashDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TrashDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Trash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Trash.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java" afterDir="false" />
     </list>
@@ -76,7 +63,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2SQkJT6NwutAZOl5iT0jjcukK9p" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -129,7 +116,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689086120988</updated>
-      <workItem from="1689193749032" duration="4070000" />
+      <workItem from="1689193749032" duration="8671000" />
     </task>
     <task id="LOCAL-00001" summary="yt">
       <created>1689086802897</created>
@@ -159,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689093424101</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="develop [DEV] - Добавил методы создания и удаления таблицы user, создал таблицу Trash и сделал crud таблицы Trash.">
+      <created>1689198014977</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689198014977</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +174,7 @@
     <MESSAGE value="yt" />
     <MESSAGE value="develop [DEV] - Сделал ООП вместо процедурного программирования." />
     <MESSAGE value="develop [DEV] - Изменил название переменных." />
-    <option name="LAST_COMMIT_MESSAGE" value="develop [DEV] - Изменил название переменных." />
+    <MESSAGE value="develop [DEV] - Добавил методы создания и удаления таблицы user, создал таблицу Trash и сделал crud таблицы Trash." />
+    <option name="LAST_COMMIT_MESSAGE" value="develop [DEV] - Добавил методы создания и удаления таблицы user, создал таблицу Trash и сделал crud таблицы Trash." />
   </component>
 </project>

@@ -1,13 +1,15 @@
 package service;
 
 import dao.UserDaoImpl;
+import model.Trash;
 import model.User;
 //бизнес логика
 public class UserServiceImpl implements UserService {
     private final UserDaoImpl dao = new UserDaoImpl();
+
     @Override
-    public void create(User user) {
-        dao.create(user);
+    public void create(User user, Trash trash) {
+        dao.create(user, trash);
     }
 
     @Override

@@ -33,7 +33,7 @@ public class TrashDaoImpl implements TrashDao{
 
             assert connection != null;
 
-            String sql = "CREATE TABLE trash (id INT PRIMARY KEY, name VARCHAR(50), age int)";
+            String sql = "CREATE TABLE trash (id INT PRIMARY KEY, UserID int, price int, amountBuy int)";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.executeUpdate();
