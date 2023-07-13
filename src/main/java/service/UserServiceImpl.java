@@ -18,8 +18,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void update(User user) {
-        dao.update(user);
+    public void update(User user, Trash trash) {
+        dao.update(user,trash);
     }
 
     @Override

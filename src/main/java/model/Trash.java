@@ -10,6 +10,16 @@ public class Trash {
 
     }
 
+    @Override
+    public String toString() {
+        return "Trash{" +
+                "id=" + id +
+                ", UserID=" + UserID +
+                ", price=" + price +
+                ", amountBuy=" + amountBuy +
+                '}';
+    }
+
     public int getUserID() {
         return UserID;
     }

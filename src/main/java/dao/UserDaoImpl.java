@@ -31,8 +31,8 @@ public class UserDaoImpl implements UserDao {
             PreparedStatement preparedStatement1 = connection.prepareStatement(sql1);
             preparedStatement1.setInt(1, trash.getId());
             preparedStatement1.setInt(2, user.getId());
-            preparedStatement1.setInt(3,trash.getPrice());
-            preparedStatement1.setInt(4,trash.getAmountBuy());
+            preparedStatement1.setInt(3, trash.getPrice());
+            preparedStatement1.setInt(4, trash.getAmountBuy());
             preparedStatement1.executeUpdate();
             connection.close();
 
@@ -49,22 +49,40 @@ public class UserDaoImpl implements UserDao {
             Connection connection = ConnectDB.connectionToDB();
 
             String sql = "SELECT * FROM users WHERE id = ?";
-            String sql1 = "SELECT * FROM trash WHERE id = ?";
+
             assert connection != null;
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            PreparedStatement preparedStatement1 = connection.prepareStatement(sql1);
 
             if (resultSet.next()) {
-                int UserId = resultSet.getInt("id");
-                String UserName = resultSet.getString("name");
-                int UserAge = resultSet.getInt("age");
+                int userId = resultSet.getInt("id");
+                String userName = resultSet.getString("name");
+                int userAge = resultSet.getInt("age");
 
+                String sql1 = "SELECT * FROM trash WHERE userID = ?";
+
+                PreparedStatement preparedStatement1 = connection.prepareStatement(sql1);
+                preparedStatement1.setInt(1, id);
+                ResultSet resultSet1 = preparedStatement1.executeQuery();
+
+                if (resultSet1.next()){
+
+                    int trashID = resultSet1.getInt("id");
+                    int userID = resultSet1.getInt("userID");
+                    int price = resultSet1.getInt("price");
+                    int amountBuy = resultSet1.getInt("amountBuy");
+                    Trash trash = new Trash(trashID,userID,price,amountBuy);
+
+                    connection.close();
+                    return new User(userId, userName, userAge, trash);
+                }
+                Trash trash = new Trash(0,userId,0,0);
                 connection.close();
-                //return new User(UserId, UserName, UserAge, );
+                return new User(userId, userName, userAge, trash);
+
             }
             return null;
 
@@ -76,7 +94,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void update(User user) {
+    public void update(User user, Trash trash) {
         try {
             Connection connection = ConnectDB.connectionToDB();
 
@@ -89,6 +107,15 @@ public class UserDaoImpl implements UserDao {
             preparedStatement.setString(2, user.getName());
             preparedStatement.setInt(3, user.getId());
             preparedStatement.executeUpdate();
+
+            String sql1 = "UPDATE trash SET price = ?, amountBuy = ? WHERE userID = ?";
+
+            PreparedStatement preparedStatement1 = connection.prepareStatement(sql1);
+            preparedStatement1.setInt(1,trash.getPrice());
+            preparedStatement1.setInt(2,trash.getAmountBuy());
+            preparedStatement1.setInt(3,trash.getUserID());
+            preparedStatement1.executeUpdate();
+
 
             connection.close();
 
