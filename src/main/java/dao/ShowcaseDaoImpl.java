@@ -1,13 +1,11 @@
 package dao;
 
 import config.ConnectDB;
-import org.apache.commons.dbcp2.BasicDataSource;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 
-public class TrashDaoImpl implements TrashDao {
+public class ShowcaseDaoImpl implements ShowcaseDao{
     @Override
     public void create() {
 
@@ -30,16 +28,17 @@ public class TrashDaoImpl implements TrashDao {
 
     @Override
     public void createTable() {
-        ConnectDB connectDB = new ConnectDB();
+        try {
+            Connection connection = ConnectDB.connectionToDB();
 
-        try (BasicDataSource dataSource = connectDB.connectDataSource();
-             Connection connection = dataSource.getConnection()) {
+            assert connection != null;
 
-            String sql = "CREATE TABLE trash (id INT PRIMARY KEY, UserID int, price int, amountBuy int)";
+            String sql = "CREATE TABLE showcase (id INT PRIMARY KEY, cpu VARCHAR(50), price int)";
+
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.executeUpdate();
 
-
+            connection.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -51,7 +50,7 @@ public class TrashDaoImpl implements TrashDao {
             Connection connection = ConnectDB.connectionToDB();
             assert connection != null;
 
-            String sql = "DROP TABLE trash";
+            String sql = "DROP TABLE showcase";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.executeUpdate();

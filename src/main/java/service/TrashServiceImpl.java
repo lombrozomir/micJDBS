@@ -3,34 +3,34 @@ package service;
 import dao.TrashDaoImpl;
 
 public class TrashServiceImpl implements TrashService{
-    private final TrashDaoImpl trashService = new TrashDaoImpl();
+    private final TrashDaoImpl trashDao = new TrashDaoImpl();
     @Override
     public void create() {
-        trashService.create();
+        trashDao.create();
     }
 
     @Override
     public void read() {
-        trashService.read();
+        trashDao.read();
     }
 
     @Override
     public void update() {
-        trashService.update();
+        trashDao.update();
     }
 
     @Override
     public void delete() {
-        trashService.delete();
+        trashDao.delete();
     }
 
     @Override
     public void createTable() {
-        trashService.createTable();
+        trashDao.createTable();
     }
 
     @Override
     public void deleteTable() {
-        trashService.deleteTable();
+        trashDao.deleteTable();
     }
 }

@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ffaf7f9-5e68-414d-b7cc-897e730d4da3" name="Changes" comment="develop [DEV] - Добавил методы создания и удаления таблицы user, создал таблицу Trash и сделал crud таблицы Trash.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="5ffaf7f9-5e68-414d-b7cc-897e730d4da3" name="Changes" comment="yt">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ShowcaseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ShowcaseDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Showcase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/ShowcaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/ShowcaseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Trash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Trash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/ConnectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/ConnectDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TrashDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TrashDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/TrashServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/TrashServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,5 +178,8 @@
     <MESSAGE value="develop [DEV] - Изменил название переменных." />
     <MESSAGE value="develop [DEV] - Добавил методы создания и удаления таблицы user, создал таблицу Trash и сделал crud таблицы Trash." />
     <option name="LAST_COMMIT_MESSAGE" value="develop [DEV] - Добавил методы создания и удаления таблицы user, создал таблицу Trash и сделал crud таблицы Trash." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/micJDBC$Main.ic" NAME="Main Coverage Results" MODIFIED="1689337898805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
